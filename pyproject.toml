@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "fastapi url shortener"
+version = "0.0.1"
+description = "Simple URL shortener with FastAPI as a backend"
+authors = ["shitcoding <shitcoder@pm.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.92.0"
+uvicorn = "^0.20.0"
+sqlalchemy = "^2.0.4"
+python-dotenv = "^0.21.1"
+validators = "^0.20.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
