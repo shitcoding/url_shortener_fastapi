@@ -63,12 +63,7 @@ def forward_to_target_url(
     url_key: str, request: Request, db: Session = Depends(get_db)
 ):
     """Redirect to the target URL for the specified shortened URL key."""
-    db_url = (
-        db.query(models.URL)
-        .filter(models.URL.key == url_key, models.URL.is_active)
-        .first()
-    )
-    if db_url:
+    if db_url := crud.get_db_url_by_key(db=db, url_key=url_key):
         return RedirectResponse(db_url.target_url)
     else:
         raise_not_found(request)
