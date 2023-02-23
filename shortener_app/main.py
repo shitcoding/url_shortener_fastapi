@@ -1,4 +1,3 @@
-# shortener_app/main.py
 import secrets
 
 import validators
