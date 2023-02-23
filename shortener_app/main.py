@@ -84,7 +84,7 @@ def forward_to_target_url(
     response_model=schemas.URLInfo,
 )
 def get_url_info(
-    secret_key: str, request, Request, db: Session = Depends(get_db)
+    secret_key: str, request: Request, db: Session = Depends(get_db)
 ):
     if db_url := crud.get_db_url_by_secret_key(db, secret_key=secret_key):
         return get_admin_info(db_url)
